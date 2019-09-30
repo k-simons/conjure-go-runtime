@@ -21,21 +21,15 @@ workflows:
             name: go/golang
             version: 1.12.9
             <<: *owner-repo
-            module: false
-          mod-cache: false
       - godel/test:
           name: test-go-1.12
           executor:
             name: go/golang
             version: 1.12.9
             <<: *owner-repo
-            module: false
-          mod-cache: false
       - godel/test:
           name: test-go-1.11
           executor:
             name: go/golang
             version: 1.11.13
             <<: *owner-repo
-            module: false
-          mod-cache: false
