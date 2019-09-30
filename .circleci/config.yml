@@ -19,17 +19,23 @@ workflows:
           name: verify
           executor:
             name: go/golang
-            version: 1.13.1
+            version: 1.12.9
             <<: *owner-repo
-      - godel/test:
-          name: test-go-1.13
-          executor:
-            name: go/golang
-            version: 1.13.1
-            <<: *owner-repo
+            module: false
+          mod-cache: false
       - godel/test:
           name: test-go-1.12
           executor:
             name: go/golang
-            version: 1.12.10
+            version: 1.12.9
             <<: *owner-repo
+            module: false
+          mod-cache: false
+      - godel/test:
+          name: test-go-1.11
+          executor:
+            name: go/golang
+            version: 1.11.13
+            <<: *owner-repo
+            module: false
+          mod-cache: false
